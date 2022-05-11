@@ -1,16 +1,24 @@
-const todoTitle = "Call family";
-const todoDesc = "Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing";
 const date = new Date();
 const dateNumber = date.getDate();
 const monthName = date.getMonth();
 const yearName = date.getFullYear();
-
-function Card(){
+/*
+------Below lines are for props--------
+function Card(props){
   return <div className="card">
-            <h4 className="cardTitle">{todoTitle}</h4>
-            <p className="cardDesc">{todoDesc}</p>
+            <h4 className="cardTitle">{props.titleText}</h4>
+            <p className="cardDesc">{props.descText}</p>
             <p className='cardFooter'>{dateNumber + " " + monthName + " " + yearName}</p> 
           </div>
 }
-
+*/
+//------Below lines are for destructuring--------
+function Card(props){
+  const {titleText, descText} = props;
+  return <div className="card">
+            <h4 className="cardTitle">{titleText}</h4>
+            <p className="cardDesc">{descText}</p>
+            <p className='cardFooter'>{dateNumber + " " + monthName + " " + yearName}</p> 
+          </div>
+}
 export default Card;
