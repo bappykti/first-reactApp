@@ -21,7 +21,7 @@ const todos = [
 ];
 
 const List = () => {
-    console.log(uuidv4());
+    // console.log(uuidv4());
    return <div>
        {todos.map((todo)=> {
            const {id, title, desc} = todo;
