@@ -1,3 +1,4 @@
+// event handler using class component
 import React from 'react'
 import EventHandler from './EVENT_HANDLER_CLASS/EventHandeler';
 
