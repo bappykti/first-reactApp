@@ -14,7 +14,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import App10 from "./App10";
 // import App11 from "./App11";
 // import App12 from "./App12";
-import App13 from "./App13";
+// import App13 from "./App13";
+import App14 from "./App14";
 
 
 
@@ -24,5 +25,5 @@ import App13 from "./App13";
 //   textAlign: "center",
 //   padding: "15px"
 // }
-ReactDOM.render(<App13 />, document.getElementById("root"));
+ReactDOM.render(<App14 />, document.getElementById("root"));
 // ReactDOM.render(<App1 />, document.getElementById("root"));
