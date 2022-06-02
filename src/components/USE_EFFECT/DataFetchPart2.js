@@ -1,5 +1,6 @@
 // fetching data using useEffect and fetch API (fake) Part 2
-import React, {useState, useEffect} from 'react'
+
+import React, {useState, useEffect} from 'react';
 
 const DataFetchPart2 = () => {
     const [todos, setTodos] = useState(null);
