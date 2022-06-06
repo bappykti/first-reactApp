@@ -1,4 +1,4 @@
-// lifeCycle
+// lifeCycle method 
 import React, { Component } from 'react';
 
 // Mounting --> constructor --> render --> componentDidMount
