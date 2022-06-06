@@ -1,3 +1,4 @@
+// using ref, ref is uncontrolled component
 import React, { Component, createRef } from 'react'
 
 class UserForm extends Component {
