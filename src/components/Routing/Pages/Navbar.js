@@ -1,5 +1,7 @@
+// Navigation 
+// useParams for dynamic routing
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import style from "./Navbar.Module.css";
 
 const Navbar = () => {

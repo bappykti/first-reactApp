@@ -1,5 +1,6 @@
 // Routing in react
 // Navigation 
+// useParams for dynamic routing
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Blogs from './components/Routing/Pages/Blogs';

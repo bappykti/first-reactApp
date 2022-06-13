@@ -1,4 +1,6 @@
 // Routing in React
+// Navigation 
+// useParams for dynamic routing
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
