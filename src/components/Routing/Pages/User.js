@@ -1,3 +1,4 @@
+// useSearchParams for query parameter
 import React, { useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 
