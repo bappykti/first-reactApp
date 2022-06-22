@@ -1,3 +1,4 @@
+// Protected routing
 import React from 'react';
 
 const Home = () => {

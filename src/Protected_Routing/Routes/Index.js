@@ -1,3 +1,4 @@
+// Protected routing
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Error from '../../components/Routing/Pages/Error';
