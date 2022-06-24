@@ -9,6 +9,14 @@ const App27 = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
+    // update
+    const [selectedUser, setSelectedUser] = useState({
+        username : " ",
+        email : " "
+    })
+    const [updateFlag, setUpdateFlag] = useState(false);
+    const [selectedUserID, setSelectedUserId] = useState("");
+
     const getAllUsers=()=>{
         fetch(URL)
         .then((res)=>{
@@ -64,12 +72,45 @@ const App27 = () => {
             setError(err.message)
         })
     }
+    const handleEdit = (id) =>{
+        setSelectedUserId(id);
+        setUpdateFlag(true);
+        // alert(id);
+        const filterData = users.filter((user)=>user.id === id);
+        // console.log(filterData);
+        setSelectedUser({
+            username: filterData[0].username,
+            email: filterData[0].email
+        });
+    };
+    const handleUpdate = (user) => {
+        fetch(URL + `/${selectedUserID}`, {
+            method : "PUT",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(user)
+        })
+        .then((res)=>{
+            if(!res.ok){
+                throw new Error("Failed to Update");
+            }
+            getAllUsers();
+            setUpdateFlag(false);
+        })
+        .catch((err)=>{
+            setError(err.message)
+        })
+    }
   return (
     <div className='app'>
         <h1>Use Management App</h1>
         {isLoading && <h2>Loading....</h2>}
         {error && <h2>{error}</h2>}
-        <UserForm btnText="Add User" handleSubmitData = {addUser} />
+
+        {updateFlag ? (<UserForm btnText="Update User" selectedUser={selectedUser} handleSubmitData = {handleUpdate} />) : <UserForm btnText="Add User" handleSubmitData = {addUser} /> }
+
+        {/* <UserForm btnText="Add User" handleSubmitData = {addUser} /> */}
        <section>
        {users && users.map((user)=>{
             const {id, username, email} = user;
@@ -77,7 +118,9 @@ const App27 = () => {
                 <article key={id} className="card">
                     <p>{username}</p>
                     <p>{email}</p>
-                    <button className='btn'>Edit</button>
+                    <button className='btn' onClick={() =>{
+                        handleEdit(id);
+                    }}>Edit</button>
                     <button className='btn' onClick={()=>{
                         handleDelete(id);
                     }}>Delete</button>
